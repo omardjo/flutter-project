@@ -9,6 +9,7 @@ import 'package:teamsyncai/screens/login_screen.dart';
 import 'package:teamsyncai/screens/Identification.dart';
 import 'package:teamsyncai/screens/Notifications.dart';
 import 'package:teamsyncai/screens/screenrec/recType.dart';
+import 'package:teamsyncai/screens/select_plan.dart';
 
 class Profile extends StatefulWidget {
   final String email;
@@ -26,7 +27,7 @@ class _ProfileState extends State<Profile> {
   List<Map<String, dynamic>> _filteredAccountSettings = [];
 
   void _navigateToReports(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => StillToCome()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => SubscriptionScreen()));
   }
 
   Future<void> _pickImage(ImageSource source) async {
@@ -274,12 +275,10 @@ class _ProfileState extends State<Profile> {
       case 'Report a problem':
         Navigator.push(context, MaterialPageRoute(builder: (context) => RecTypeScreen(email: widget.email)));
         break;
-      case 'Reports':
+      case 'Upgrade your Plan':
         _navigateToReports(context);
         break;
-      case 'Still to come':
-        Navigator.push(context, MaterialPageRoute(builder: (context) => StillToCome()));
-        break;
+     
     }
   }
 }
@@ -288,6 +287,5 @@ List<Map<String, dynamic>> _accountSettings = [
   {'title': 'Identification', 'icon': Icons.save_as_sharp},
   {'title': 'Notifications', 'icon': Icons.notifications},
   {'title': 'Report a problem', 'icon': Icons.privacy_tip},
-  {'title': 'Reports', 'icon': Icons.article},
-  {'title': 'Still to come', 'icon': Icons.more_horiz},
+  {'title': 'Upgrade your Plan', 'icon': Icons.article},
 ];

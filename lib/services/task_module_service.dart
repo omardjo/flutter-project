@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../model/module.dart';
 
 mixin Task_Module_service {
-  static const String baseURL = 'http://192.168.128.222:3000';
+  static const String baseURL = 'http://192.168.1.11::3000';
   Future<double> fetchCompletionPercentage(String moduleId) async {
     try {
       final response = await http.get(Uri.parse('$baseURL/completionPercentage/$moduleId'));

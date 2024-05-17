@@ -5,7 +5,7 @@ import 'package:teamsyncai/model/reclamation.dart';
 class ReclamationService {
  static Future<Map<String, dynamic>> fetchReclamations(String type, String userEmail) async {
   try {
-    final response = await http.get(Uri.parse('http://192.168.128.222:3000/reclamation/type/$type?userEmail=$userEmail'));
+    final response = await http.get(Uri.parse('http://192.168.1.11:3000/reclamation/type/$type?userEmail=$userEmail'));
 
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);
@@ -34,7 +34,7 @@ class ReclamationService {
   Function setStateCallback,
 ) async {
   try {
-    final url = 'http://192.168.128.222:3000/reclamation/$id';
+    final url = 'http://192.168.1.11:3000/reclamation/$id';
     final response = await http.delete(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -58,7 +58,7 @@ static Future<void> deleteReclamationsByType(
   Function setStateCallback,
 ) async {
   try {
-    final url = 'http://192.168.128.222:3000/reclamation/type/$type?userEmail=$userEmail';
+    final url = 'http://192.168.1.11:3000/reclamation/type/$type?userEmail=$userEmail';
     final response = await http.delete(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -77,7 +77,7 @@ static Future<void> deleteReclamationsByType(
 
 
 static Future<List<Reclamation>> fetchAllReclamations(String userEmail) async {
-  final url = 'http://192.168.128.222:3000/reclamation?userEmail=$userEmail';
+  final url = 'http://192.168.1.11:3000/reclamation?userEmail=$userEmail';
   final response = await http.get(Uri.parse(url));
 
   if (response.statusCode == 200) {
@@ -92,7 +92,7 @@ static Future<List<Reclamation>> fetchAllReclamations(String userEmail) async {
 static Future<List<Reclamation>> getReclamationsForUserManager(String emailManager) async {
   
 
-  final String url = 'http://192.168.128.222:3000/reclamation/manager?emailManager=$emailManager&status=In progress';
+  final String url = 'http://192.168.1.11:3000/reclamation/manager?emailManager=$emailManager&status=In progress';
 
   try {
     final response = await http.get(Uri.parse(url));
@@ -114,7 +114,7 @@ static Future<List<Reclamation>> getReclamationsForUserManager(String emailManag
 
 static Future<void> updateReclamation(String id, Map<String, dynamic> updatedInfoData) async {
   try {
-    final url = 'http://192.168.128.222:3000/reclamation/$id'; // Assurez-vous que $id est correctement remplacé par l'ID réel
+    final url = 'http://192.168.1.11:3000/reclamation/$id'; // Assurez-vous que $id est correctement remplacé par l'ID réel
     final response = await http.put(
       Uri.parse(url),
       headers: <String, String>{

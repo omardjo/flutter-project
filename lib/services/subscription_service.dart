@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:teamsyncai/model/subscription_model.dart';
 
 class SubscriptionService {
-  static const String baseUrl = 'https://backend-2-le95.onrender.com/subscriptions';
+  static const String baseUrl = 'http://192.168.1.11:3000/subscriptions';
   static Future<List<Subscription>> getSubscriptions() async {
     final response = await http.get(Uri.parse('$baseUrl/get'));
     if (response.statusCode == 200) {

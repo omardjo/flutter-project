@@ -106,6 +106,7 @@ Map<String, dynamic> receiverEmailsMap = Map.fromIterable(
         return Scaffold(
           appBar: AppBar(
             title: const Text('Create Chatroom'),
+             backgroundColor: const Color(0xFFd48026),
           ),
           body: Padding(
             padding: const EdgeInsets.all(16.0),

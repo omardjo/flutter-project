@@ -8,7 +8,7 @@ import '../model/task.dart';
 
 
 class ApiService {
-  static const String baseURL = 'http://192.168.1.10:3000';
+  static const String baseURL = 'http://192.168.1.11:3000';
 
 
   static Future<List<Project>> fetchProjects({required String email}) async {

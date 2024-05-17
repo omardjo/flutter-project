@@ -39,6 +39,7 @@ Future<void> fetchLastKeywords(String userInput) async {
     return Scaffold(
       appBar: AppBar(
         title: Text('Translation'),
+         backgroundColor: const Color(0xFFd48026),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
